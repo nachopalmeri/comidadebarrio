@@ -1,24 +1,29 @@
 /**
  * COMIDA DE BARRIO - JavaScript Principal
- * Solo funcionalidades básicas: modales y validación
+ * Funcionalidades: carrito, favoritos, notificaciones
  */
 
-// Datos estáticos del carrito (solo para mostrar)
-const cartItems = [
-  { name: 'Empanadas de Carne', quantity: 2, price: 10500 },
-  { name: 'Milanesa Napolitana', quantity: 1, price: 13500 }
-];
+// Obtener carrito desde localStorage o inicializar vacío
+function getCart() {
+  const stored = localStorage.getItem('comidadebarrio_cart');
+  return stored ? JSON.parse(stored) : [];
+}
 
-// Datos estáticos de favoritos (solo para mostrar)
-const favoriteRestaurants = [
-  { id: 'sabores-mi-tierra', name: 'Sabores de Mi Tierra' },
-  { id: 'parrilla-asador', name: 'Parrilla El Asador' }
-];
+// Guardar carrito en localStorage
+function saveCart(cart) {
+  localStorage.setItem('comidadebarrio_cart', JSON.stringify(cart));
+}
 
-const favoriteItems = [
-  { id: 'empanadas-carne', name: 'Empanadas de Carne' },
-  { id: 'asado', name: 'Asado' }
-];
+// Obtener favoritos desde localStorage o inicializar vacío
+function getFavorites() {
+  const stored = localStorage.getItem('comidadebarrio_favorites');
+  return stored ? JSON.parse(stored) : [];
+}
+
+// Guardar favoritos en localStorage
+function saveFavorites(favorites) {
+  localStorage.setItem('comidadebarrio_favorites', JSON.stringify(favorites));
+}
 
 /**
  * Actualiza el badge del carrito en la navbar
@@ -26,7 +31,8 @@ const favoriteItems = [
 function updateCartBadge() {
   const badge = document.getElementById('cart-badge');
   if (badge) {
-    const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+    const cart = getCart();
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     badge.textContent = totalItems;
     badge.style.display = totalItems > 0 ? 'block' : 'none';
   }
@@ -38,7 +44,8 @@ function updateCartBadge() {
 function updateFavoritesBadge() {
   const badge = document.getElementById('favorites-badge');
   if (badge) {
-    const totalFavorites = favoriteRestaurants.length + favoriteItems.length;
+    const favorites = getFavorites();
+    const totalFavorites = favorites.length;
     badge.textContent = totalFavorites;
     badge.style.display = totalFavorites > 0 ? 'block' : 'none';
   }
@@ -62,9 +69,19 @@ function showNotification(message) {
 }
 
 /**
- * Agrega un item al carrito (solo muestra notificación)
+ * Agrega un item al carrito
  */
 function addToCart(name, price) {
+  const cart = getCart();
+  const existingItem = cart.find(item => item.name === name);
+  
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({ name, quantity: 1, price });
+  }
+  
+  saveCart(cart);
   showNotification(`${name} agregado al carrito`);
   updateCartBadge();
 }
@@ -127,7 +144,8 @@ function showRestaurantModal(restaurant) {
   const favoriteText = document.getElementById('restaurantModalFavoriteText');
   const icon = favoriteBtn.querySelector('i');
   
-  const isFavorite = favoriteRestaurants.some(r => r.id === restaurant.id);
+  const favorites = getFavorites();
+  const isFavorite = favorites.some(r => r.id === restaurant.id);
   
   if (isFavorite) {
     icon.classList.remove('bi-heart');
@@ -157,7 +175,8 @@ function showRestaurantModal(restaurant) {
  * Procede al checkout
  */
 function proceedToCheckout() {
-  if (cartItems.length === 0) {
+  const cart = getCart();
+  if (cart.length === 0) {
     alert('Tu carrito está vacío');
     return;
   }
