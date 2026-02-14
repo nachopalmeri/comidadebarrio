@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacta con Comida de Barrio - Estamos aquí para ayudarte">
+  <title>Contacto | Comida de Barrio</title>
+  
+  <!-- Bootstrap 5.x CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="../index.html">
+        <i class="bi bi-triangle-fill me-2 text-dark"></i>
+        <span>Comida de Barrio</span>
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="historia.html">Historia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="servicios.html">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="restaurantes.html">Restaurantes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a>
+          </li>
+        </ul>
+        
+        <div class="d-flex align-items-center gap-3">
+          <input class="form-control form-control-sm search-box-nav" type="search" placeholder="Buscar" aria-label="Buscar">
+          <a href="favoritos.html" class="text-dark position-relative" aria-label="Favoritos">
+            <i class="bi bi-heart fs-5"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="favorites-badge" style="display: none;">0</span>
+          </a>
+          <a href="carrito.html" class="text-dark position-relative" aria-label="Carrito de compras">
+            <i class="bi bi-cart fs-5"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-badge">0</span>
+          </a>
+          <a href="perfil.html" class="text-dark" aria-label="Perfil de usuario">
+            <i class="bi bi-person-circle fs-4"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTACT SECTION -->
+  <main class="contact-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h1 class="text-center mb-5">Contacto</h1>
+          
+          <div class="contact-form">
+            <form id="contactForm" novalidate>
+              <!-- Nombre -->
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre completo <span class="text-danger">*</span></label>
+                <input type="text" 
+                       class="form-control" 
+                       id="nombre" 
+                       name="nombre" 
+                       required
+                       aria-describedby="nombreHelp nombreError"
+                       aria-invalid="false">
+                <div id="nombreHelp" class="form-text">Ingresa tu nombre completo</div>
+                <div id="nombreError" class="invalid-feedback"></div>
+              </div>
+              
+              <!-- Email -->
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo electrónico <span class="text-danger">*</span></label>
+                <input type="email" 
+                       class="form-control" 
+                       id="email" 
+                       name="email" 
+                       required
+                       aria-describedby="emailHelp emailError"
+                       aria-invalid="false">
+                <div id="emailHelp" class="form-text">Ingresa un correo válido</div>
+                <div id="emailError" class="invalid-feedback"></div>
+              </div>
+              
+              <!-- Teléfono -->
+              <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="tel" 
+                       class="form-control" 
+                       id="telefono" 
+                       name="telefono"
+                       pattern="[0-9+\-\s()]+"
+                       aria-describedby="telefonoHelp telefonoError">
+                <div id="telefonoHelp" class="form-text">Formato: +54 11 1234-5678</div>
+                <div id="telefonoError" class="invalid-feedback"></div>
+              </div>
+              
+              <!-- Asunto -->
+              <div class="mb-3">
+                <label for="asunto" class="form-label">Asunto <span class="text-danger">*</span></label>
+                <select class="form-select" 
+                        id="asunto" 
+                        name="asunto" 
+                        required
+                        aria-describedby="asuntoHelp asuntoError"
+                        aria-invalid="false">
+                  <option value="">Selecciona un asunto</option>
+                  <option value="consulta">Consulta general</option>
+                  <option value="pedido">Consulta sobre pedido</option>
+                  <option value="restaurante">Registrar restaurante</option>
+                  <option value="soporte">Soporte técnico</option>
+                  <option value="otro">Otro</option>
+                </select>
+                <div id="asuntoHelp" class="form-text">Selecciona el motivo de tu contacto</div>
+                <div id="asuntoError" class="invalid-feedback"></div>
+              </div>
+              
+              <!-- Mensaje -->
+              <div class="mb-3">
+                <label for="mensaje" class="form-label">Mensaje <span class="text-danger">*</span></label>
+                <textarea class="form-control" 
+                          id="mensaje" 
+                          name="mensaje" 
+                          rows="5" 
+                          required
+                          minlength="10"
+                          maxlength="500"
+                          aria-describedby="mensajeHelp mensajeError"
+                          aria-invalid="false"></textarea>
+                <div id="mensajeHelp" class="form-text">Mínimo 10 caracteres, máximo 500</div>
+                <div id="mensajeError" class="invalid-feedback"></div>
+                <div class="text-end">
+                  <small class="text-muted"><span id="charCount">0</span>/500</small>
+                </div>
+              </div>
+              
+              <!-- Checkbox consentimiento -->
+              <div class="mb-3 form-check">
+                <input type="checkbox" 
+                       class="form-check-input" 
+                       id="consentimiento" 
+                       name="consentimiento" 
+                       required
+                       aria-describedby="consentimientoError"
+                       aria-invalid="false">
+                <label class="form-check-label" for="consentimiento">
+                  Acepto que mis datos sean utilizados para responder a mi consulta <span class="text-danger">*</span>
+                </label>
+                <div id="consentimientoError" class="invalid-feedback"></div>
+              </div>
+              
+              <!-- Submit Button -->
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg">Enviar Mensaje</button>
+              </div>
+              
+              <!-- Success Message -->
+              <div id="successMessage" class="alert alert-success mt-3 d-none" role="alert">
+                <i class="bi bi-check-circle me-2"></i>
+                ¡Mensaje enviado correctamente! Nos pondremos en contacto contigo pronto.
+              </div>
+            </form>
+          </div>
+          
+          <!-- Contact Information -->
+          <div class="mt-5 text-center">
+            <h2 class="h4 mb-4">O contáctanos directamente</h2>
+            <div class="row g-4">
+              <div class="col-md-4">
+                <i class="bi bi-envelope fs-3 text-primary mb-2"></i>
+                <p class="mb-0">contacto@comidabarrio.com</p>
+              </div>
+              <div class="col-md-4">
+                <i class="bi bi-telephone fs-3 text-primary mb-2"></i>
+                <p class="mb-0">+54 11 1234-5678</p>
+              </div>
+              <div class="col-md-4">
+                <i class="bi bi-geo-alt fs-3 text-primary mb-2"></i>
+                <p class="mb-0">Buenos Aires, Argentina</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="h5 mb-3">Comida de Barrio</h3>
+          <p>Conectando vecinos con los mejores sabores locales.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <h4 class="h6 mb-3">Síguenos</h4>
+          <div class="d-flex gap-3 justify-content-md-end">
+            <a href="#" class="text-white" aria-label="Facebook"><i class="bi bi-facebook fs-4"></i></a>
+            <a href="#" class="text-white" aria-label="Instagram"><i class="bi bi-instagram fs-4"></i></a>
+            <a href="#" class="text-white" aria-label="Twitter"><i class="bi bi-twitter fs-4"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="my-3">
+      <div class="text-center">
+        <p class="mb-0">&copy; 2024 Comida de Barrio. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.x JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/contact-validation.js"></script>
+</body>
+</html>
+

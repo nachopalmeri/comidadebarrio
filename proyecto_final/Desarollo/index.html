@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Comida de Barrio - Descubre los mejores sabores de tu barrio">
+  <title>Comida de Barrio - Home</title>
+  
+  <!-- Bootstrap 5.x CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+        <i class="bi bi-triangle-fill me-2 text-dark"></i>
+        <span>Comida de Barrio</span>
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="secciones/historia.html">Historia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="secciones/servicios.html">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="secciones/restaurantes.html">Restaurantes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="secciones/contacto.html">Contacto</a>
+          </li>
+        </ul>
+        
+        <div class="d-flex align-items-center gap-3">
+          <input class="form-control form-control-sm search-box-nav" type="search" placeholder="Buscar" aria-label="Buscar">
+          <a href="secciones/favoritos.html" class="text-dark position-relative" aria-label="Favoritos">
+            <i class="bi bi-heart fs-5"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="favorites-badge" style="display: none;">0</span>
+          </a>
+          <a href="secciones/carrito.html" class="text-dark position-relative" aria-label="Carrito de compras">
+            <i class="bi bi-cart fs-5"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-badge">0</span>
+          </a>
+          <a href="secciones/perfil.html" class="text-dark" aria-label="Perfil de usuario">
+            <i class="bi bi-person-circle fs-4"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BANNER PRINCIPAL -->
+  <section class="banner-hero" aria-labelledby="banner-heading">
+    <div class="container">
+      <div class="row align-items-center min-vh-50">
+        <div class="col-lg-6 text-center text-lg-start">
+          <h1 id="banner-heading" class="display-4 fw-bold mb-4">Sabores Auténticos de tu Barrio</h1>
+          <p class="lead mb-4">Descubre los mejores restaurantes y comidas tradicionales argentinas cerca de ti</p>
+          <a href="#featured-heading" class="btn btn-primary btn-lg px-5 py-3" role="button">Ver Restaurantes</a>
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <img src="assets/img/banner-home.jpg" alt="Platos tradicionales argentinos" class="img-fluid rounded shadow">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH SECTION -->
+  <section class="search-section py-5 bg-light" aria-labelledby="search-heading">
+    <div class="container">
+      <h2 id="search-heading" class="text-center mb-4 visually-hidden">Búsqueda de restaurantes</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="input-group input-group-lg mb-4">
+            <span class="input-group-text bg-white border-end-0"><i class="bi bi-search"></i></span>
+            <input type="search" class="form-control border-start-0" placeholder="Buscar restaurantes o comidas" aria-label="Buscar restaurantes">
+          </div>
+        </div>
+      </div>
+      
+      <div class="tag-container d-flex flex-wrap justify-content-center gap-2 mb-4">
+        <button class="btn btn-outline-secondary rounded-pill tag-btn" type="button">Nearby</button>
+        <button class="btn btn-outline-secondary rounded-pill tag-btn" type="button">Argentinian</button>
+        <button class="btn btn-outline-secondary rounded-pill tag-btn" type="button">Parrilla</button>
+        <button class="btn btn-outline-secondary rounded-pill tag-btn" type="button">Empanadas</button>
+        <button class="btn btn-outline-secondary rounded-pill tag-btn" type="button">Milanesas</button>
+        <button class="btn btn-outline-secondary rounded-pill tag-btn" type="button">Pizzería Argentina</button>
+        <button class="btn btn-outline-secondary rounded-pill tag-btn" type="button">Locro</button>
+        <button class="btn btn-outline-secondary rounded-pill tag-btn" type="button">Humita</button>
+        <button class="btn btn-outline-secondary rounded-pill tag-btn" type="button">Comida Vegana/Vegetariana Local</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP SECTION -->
+  <section class="map-section py-5" aria-labelledby="map-heading">
+    <div class="container">
+      <h2 id="map-heading" class="text-center mb-4">Encuentra Restaurantes Cerca de Ti</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="map-box rounded shadow">
+            <iframe
+              width="100%"
+              height="400"
+              style="border:0"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-58.6%2C-34.8%2C-58.5%2C-34.7&layer=mapnik&marker=-34.748,-58.56"
+              title="Mapa de restaurantes">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN DESTACADOS -->
+  <section class="featured-section py-5 bg-light" aria-labelledby="featured-heading">
+    <div class="container">
+      <h2 id="featured-heading" class="text-center mb-5">Restaurantes Destacados</h2>
+      <div class="row g-4">
+        <article class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm restaurant-card">
+            <div class="position-relative">
+              <img src="assets/img/restaurante-sabores-mi-tierra.jpg" class="card-img-top" alt="Restaurante Sabores de Mi Tierra" style="height: 200px; object-fit: cover;">
+              <button class="btn btn-sm position-absolute top-0 end-0 m-2 favorite-btn" 
+                      data-restaurant="Sabores de Mi Tierra" 
+                      data-restaurant-id="sabores-mi-tierra"
+                      aria-label="Agregar a favoritos">
+                <i class="bi bi-heart"></i>
+              </button>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title h5">Sabores de Mi Tierra</h3>
+              <p class="card-text">
+                <span class="badge bg-warning text-dark">4.5</span>
+                <span class="text-muted">(200+ reviews)</span>
+                <span class="text-muted">· Argentino · $$</span>
+              </p>
+              <p class="card-text">Comida tradicional argentina con los mejores sabores de barrio.</p>
+              <a href="secciones/menu.html?restaurant=sabores-mi-tierra" class="btn btn-outline-primary">Ver Menú</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm restaurant-card">
+            <div class="position-relative">
+              <img src="assets/img/restaurante-parrilla-asador.jpg" class="card-img-top" alt="Parrilla El Asador" style="height: 200px; object-fit: cover;">
+              <button class="btn btn-sm position-absolute top-0 end-0 m-2 favorite-btn" 
+                      data-restaurant="Parrilla El Asador" 
+                      data-restaurant-id="parrilla-asador"
+                      aria-label="Agregar a favoritos">
+                <i class="bi bi-heart"></i>
+              </button>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title h5">Parrilla El Asador</h3>
+              <p class="card-text">
+                <span class="badge bg-warning text-dark">4.8</span>
+                <span class="text-muted">(150+ reviews)</span>
+                <span class="text-muted">· Parrilla · $$$</span>
+              </p>
+              <p class="card-text">Las mejores carnes a la parrilla con tradición familiar.</p>
+              <a href="secciones/menu.html?restaurant=parrilla-asador" class="btn btn-outline-primary">Ver Menú</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm restaurant-card">
+            <div class="position-relative">
+              <img src="assets/img/restaurante-pizzeria-nonna.jpg" class="card-img-top" alt="Pizzería La Nonna" style="height: 200px; object-fit: cover;">
+              <button class="btn btn-sm position-absolute top-0 end-0 m-2 favorite-btn" 
+                      data-restaurant="Pizzería La Nonna" 
+                      data-restaurant-id="pizzeria-nonna"
+                      aria-label="Agregar a favoritos">
+                <i class="bi bi-heart"></i>
+              </button>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title h5">Pizzería La Nonna</h3>
+              <p class="card-text">
+                <span class="badge bg-warning text-dark">4.6</span>
+                <span class="text-muted">(180+ reviews)</span>
+                <span class="text-muted">· Pizzería · $</span>
+              </p>
+              <p class="card-text">Pizza al estilo argentino con masa casera y ingredientes frescos.</p>
+              <a href="secciones/menu.html?restaurant=pizzeria-nonna" class="btn btn-outline-primary">Ver Menú</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section class="cta-section py-5 text-white" aria-labelledby="cta-heading">
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 id="cta-heading" class="display-4 fw-bold mb-4">¿Listo para ordenar?</h2>
+          <p class="lead mb-4 fs-5">Descubre cientos de restaurantes y disfruta de la mejor comida de tu barrio. Pedidos rápidos, entregas seguras y sabores auténticos.</p>
+          <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
+            <a href="#featured-heading" class="btn btn-light btn-lg px-5 py-3" role="button">
+              <i class="bi bi-search me-2"></i>Explorar Restaurantes
+            </a>
+            <a href="secciones/restaurantes.html" class="btn btn-outline-light btn-lg px-5 py-3" role="button">
+              <i class="bi bi-list-ul me-2"></i>Ver Todos
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="h5 mb-3">Comida de Barrio</h3>
+          <p>Conectando vecinos con los mejores sabores locales.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <h4 class="h6 mb-3">Síguenos</h4>
+          <div class="d-flex gap-3 justify-content-md-end">
+            <a href="#" class="text-white" aria-label="Facebook"><i class="bi bi-facebook fs-4"></i></a>
+            <a href="#" class="text-white" aria-label="Instagram"><i class="bi bi-instagram fs-4"></i></a>
+            <a href="#" class="text-white" aria-label="Twitter"><i class="bi bi-twitter fs-4"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="my-3">
+      <div class="text-center">
+        <p class="mb-0">&copy; 2024 Comida de Barrio. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.x JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

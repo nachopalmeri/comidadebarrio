@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conoce la historia de Comida de Barrio y nuestra misión">
+  <title>Historia | Comida de Barrio</title>
+  
+  <!-- Bootstrap 5.x CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="../index.html">
+        <i class="bi bi-triangle-fill me-2 text-dark"></i>
+        <span>Comida de Barrio</span>
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="historia.html">Historia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="servicios.html">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="restaurantes.html">Restaurantes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li>
+        </ul>
+        
+        <div class="d-flex align-items-center gap-3">
+          <input class="form-control form-control-sm search-box-nav" type="search" placeholder="Buscar" aria-label="Buscar">
+          <a href="favoritos.html" class="text-dark position-relative" aria-label="Favoritos">
+            <i class="bi bi-heart fs-5"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="favorites-badge" style="display: none;">0</span>
+          </a>
+          <a href="carrito.html" class="text-dark position-relative" aria-label="Carrito de compras">
+            <i class="bi bi-cart fs-5"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-badge">0</span>
+          </a>
+          <a href="perfil.html" class="text-dark" aria-label="Perfil de usuario">
+            <i class="bi bi-person-circle fs-4"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HISTORY CONTENT -->
+  <main class="content-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <header class="text-center mb-5">
+            <h1>Nuestra Historia</h1>
+            <p class="lead text-muted">Conectando vecinos con los sabores auténticos de su barrio</p>
+          </header>
+          
+          <article>
+            <section class="mb-5">
+              <h2>El Origen</h2>
+              <p>
+                Comida de Barrio nació en 2020 con una visión simple pero poderosa: acercar los sabores tradicionales 
+                argentinos a cada rincón de nuestros barrios. Fundada por un grupo de emprendedores apasionados por la 
+                gastronomía local, nuestra plataforma busca preservar y promover las recetas auténticas que han pasado 
+                de generación en generación.
+              </p>
+              <img src="../assets/img/cocina-tradicional.jpg" 
+                   alt="Cocina tradicional argentina" 
+                   class="content-image">
+            </section>
+            
+            <section class="mb-5">
+              <h2>Nuestra Misión</h2>
+              <p>
+                Creemos que cada barrio tiene su propia identidad culinaria, sus propios sabores y tradiciones que 
+                merecen ser descubiertos y compartidos. Nuestra misión es crear una red que conecte a los vecinos con 
+                los mejores restaurantes locales, desde las parrillas más tradicionales hasta las pizzerías de barrio, 
+                pasando por los locales de empanadas y los restaurantes familiares que han servido a la comunidad por 
+                décadas.
+              </p>
+              <p>
+                Trabajamos directamente con restaurantes locales, apoyando la economía de barrio y garantizando que 
+                cada pedido llegue fresco y delicioso a tu mesa. Valoramos la calidad, la autenticidad y el servicio 
+                personalizado que solo los negocios de barrio pueden ofrecer.
+              </p>
+            </section>
+            
+            <section class="mb-5">
+              <h2>Nuestros Valores</h2>
+              <div class="row g-4 mt-3">
+                <div class="col-md-6">
+                  <div class="d-flex align-items-start">
+                    <i class="bi bi-heart-fill text-primary fs-4 me-3"></i>
+                    <div>
+                      <h3 class="h5">Pasión por lo Local</h3>
+                      <p>Apoyamos y promovemos los negocios locales, creando una comunidad más fuerte y conectada.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex align-items-start">
+                    <i class="bi bi-star-fill text-primary fs-4 me-3"></i>
+                    <div>
+                      <h3 class="h5">Calidad Garantizada</h3>
+                      <p>Cada restaurante en nuestra plataforma cumple con altos estándares de calidad y autenticidad.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex align-items-start">
+                    <i class="bi bi-people-fill text-primary fs-4 me-3"></i>
+                    <div>
+                      <h3 class="h5">Comunidad</h3>
+                      <p>Construimos relaciones duraderas entre vecinos y restaurantes, fortaleciendo el tejido social.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex align-items-start">
+                    <i class="bi bi-shield-check-fill text-primary fs-4 me-3"></i>
+                    <div>
+                      <h3 class="h5">Confianza</h3>
+                      <p>Transparencia y honestidad en cada interacción, desde el pedido hasta la entrega.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section class="mb-5">
+              <h2>El Futuro</h2>
+              <p>
+                Hoy, Comida de Barrio conecta a miles de usuarios con cientos de restaurantes en toda la región. 
+                Nuestro compromiso sigue siendo el mismo: hacer que los sabores auténticos de tu barrio estén siempre 
+                a un clic de distancia. Continuamos innovando para mejorar la experiencia de nuestros usuarios y 
+                apoyar el crecimiento de los restaurantes locales.
+              </p>
+              <p>
+                Estamos trabajando en expandir nuestra red, incorporar nuevas funcionalidades y seguir siendo la 
+                plataforma de referencia para descubrir la mejor comida de barrio. Porque creemos que cada bocado 
+                cuenta una historia, y queremos que esas historias lleguen a tu mesa.
+              </p>
+            </section>
+          </article>
+          
+          <div class="text-center mt-5">
+            <a href="contacto.html" class="btn btn-primary btn-lg">Únete a Nuestra Comunidad</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="h5 mb-3">Comida de Barrio</h3>
+          <p>Conectando vecinos con los mejores sabores locales.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <h4 class="h6 mb-3">Síguenos</h4>
+          <div class="d-flex gap-3 justify-content-md-end">
+            <a href="#" class="text-white" aria-label="Facebook"><i class="bi bi-facebook fs-4"></i></a>
+            <a href="#" class="text-white" aria-label="Instagram"><i class="bi bi-instagram fs-4"></i></a>
+            <a href="#" class="text-white" aria-label="Twitter"><i class="bi bi-twitter fs-4"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="my-3">
+      <div class="text-center">
+        <p class="mb-0">&copy; 2024 Comida de Barrio. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.x JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
+

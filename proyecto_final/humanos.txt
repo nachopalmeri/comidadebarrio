@@ -1,0 +1,15 @@
+    Estudiante: Martin Aran 
+    Legajo: LU1215945 
+    Estudiante: Joaquin Lasca
+    Legajo: LU1215756  
+    Estudiante: Lautaro Vallejos
+    Legajo: LU1218734 
+    Estudiante: Ignacio Palmeri 
+    Legajo: LU1218960 
+    Estudiante: Luca Caraffini
+    Legajo: LU1216015 
+
+    Universidad: UADE
+    Materia: Diseño y Desarrollo Web
+    Proyecto: Comida de Barrio
+    Año: 2025
