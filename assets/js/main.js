@@ -71,14 +71,15 @@ function showNotification(message) {
 /**
  * Agrega un item al carrito
  */
-function addToCart(name, price) {
+function addToCart(name, price, details = {}) {
   const cart = getCart();
-  const existingItem = cart.find(item => item.name === name);
+  const restaurant = details.restaurant || '';
+  const existingItem = cart.find(item => item.name === name && (item.restaurant || '') === restaurant);
   
   if (existingItem) {
     existingItem.quantity += 1;
   } else {
-    cart.push({ name, quantity: 1, price });
+    cart.push({ name, quantity: 1, price, restaurant, image: details.image || '' });
   }
   
   saveCart(cart);
@@ -89,7 +90,7 @@ function addToCart(name, price) {
 /**
  * MODAL DE COMIDA
  */
-function showFoodModal(name, price, description, image, category) {
+function showFoodModal(name, price, description, image, category, details = {}) {
   const modal = document.getElementById('foodModal');
   if (!modal) return;
   
@@ -103,7 +104,7 @@ function showFoodModal(name, price, description, image, category) {
   
   const addToCartBtn = document.getElementById('foodModalAddToCartBtn');
   addToCartBtn.onclick = () => {
-    addToCart(name, price);
+    addToCart(name, price, details);
     const bsModal = bootstrap.Modal.getInstance(modal);
     if (bsModal) bsModal.hide();
   };

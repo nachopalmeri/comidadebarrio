@@ -70,11 +70,11 @@
   <header class="menu-header">
     <div class="container">
       <div class="restaurant-info">
-        <h1>Sabores de Mi Tierra</h1>
+        <h1 id="restaurant-name">Sabores de Mi Tierra</h1>
         <p class="restaurant-meta">
-          <span class="badge bg-warning text-dark">4.5</span>
-          <span>(200+ reseñas)</span>
-          <span>· Argentino · $$</span>
+          <span class="badge bg-warning text-dark" id="restaurant-rating">4.5</span>
+          <span id="restaurant-reviews">(200+ reseñas)</span>
+          <span id="restaurant-kind">· Argentino · $$</span>
         </p>
       </div>
       
@@ -86,190 +86,7 @@
     <div class="container">
       <h2 class="mb-4">Menú</h2>
       
-      <!-- APPETIZERS SECTION -->
-      <section aria-labelledby="appetizers-heading">
-        <h3 id="appetizers-heading" class="h4 mb-4">Entradas</h3>
-        
-        <!-- Empanadas de Carne -->
-        <article class="menu-item">
-          <div class="row align-items-center">
-            <div class="col-md-8 menu-item-content">
-              <div class="menu-item-info">
-                <div class="d-flex justify-content-between align-items-start mb-2">
-                  <h3 class="h5 mb-0">Empanadas de Carne</h3>
-                  <button class="btn btn-sm btn-link text-danger p-0" 
-                          onclick="showNotification('Empanadas de Carne agregado a favoritos')"
-                          aria-label="Agregar a favoritos">
-                    <i class="bi bi-heart"></i>
-                  </button>
-                </div>
-                <p class="menu-item-description">
-                  Pasteles salados rellenos con carne molida sazonada, cebollas y aceitunas.
-                </p>
-                <div class="d-flex gap-2 align-items-center">
-                  <span class="h5 mb-0 text-primary me-2">$10.500</span>
-                  <button class="btn btn-outline-primary" onclick="showFoodModal('Empanadas de Carne', 10500, 'Pasteles salados rellenos con carne molida sazonada, cebollas y aceitunas.', '../assets/img/empanadas-carne.jpg', 'Entradas')">Ver Detalles</button>
-                  <button class="btn btn-primary" onclick="addToCart('Empanadas de Carne', 10500)" aria-label="Agregar al carrito">
-                    <i class="bi bi-cart-plus"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <img src="/assets/img/empanadas-carne.jpg" 
-                   alt="Empanadas de Carne" 
-                   class="menu-item-image cursor-pointer"
-                   onclick="showFoodModal('Empanadas de Carne', 10500, 'Pasteles salados rellenos con carne molida sazonada, cebollas y aceitunas.', '../assets/img/empanadas-carne.jpg', 'Entradas')"
-                   style="cursor: pointer;">
-            </div>
-          </div>
-        </article>
-        
-        <!-- Choripán -->
-        <article class="menu-item">
-          <div class="row align-items-center">
-            <div class="col-md-8 menu-item-content">
-              <div class="menu-item-info">
-                <div class="d-flex justify-content-between align-items-start mb-2">
-                  <h3 class="h5 mb-0">Choripán</h3>
-                  <button class="btn btn-sm btn-link text-danger p-0" 
-                          onclick="showNotification('Choripán agregado a favoritos')"
-                          aria-label="Agregar a favoritos">
-                    <i class="bi bi-heart"></i>
-                  </button>
-                </div>
-                <p class="menu-item-description">
-                  Chorizo a la parrilla servido en un pan crujiente, generalmente acompañado con salsa chimichurri.
-                </p>
-                <div class="d-flex gap-2 align-items-center">
-                  <span class="h5 mb-0 text-primary me-2">$11.500</span>
-                  <button class="btn btn-outline-primary" onclick="showFoodModal('Choripán', 11500, 'Chorizo a la parrilla servido en un pan crujiente, generalmente acompañado con salsa chimichurri.', '../assets/img/choripan.jpg', 'Entradas')">Ver Detalles</button>
-                  <button class="btn btn-primary" onclick="addToCart('Choripán', 11500)" aria-label="Agregar al carrito">
-                    <i class="bi bi-cart-plus"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <img src="/assets/img/choripan.jpg" 
-                   alt="Choripán" 
-                   class="menu-item-image cursor-pointer"
-                   onclick="showFoodModal('Choripán', 11500, 'Chorizo a la parrilla servido en un pan crujiente, generalmente acompañado con salsa chimichurri.', '../assets/img/choripan.jpg', 'Entradas')"
-                   style="cursor: pointer;">
-            </div>
-          </div>
-        </article>
-      </section>
-      
-      <!-- MAIN COURSES SECTION -->
-      <section aria-labelledby="main-courses-heading" class="mt-5">
-        <h3 id="main-courses-heading" class="h4 mb-4">Platos Principales</h3>
-        
-        <!-- Asado -->
-        <article class="menu-item">
-          <div class="row align-items-center">
-            <div class="col-md-8 menu-item-content">
-              <div class="menu-item-info">
-                <div class="d-flex justify-content-between align-items-start mb-2">
-                  <h3 class="h5 mb-0">Asado</h3>
-                  <button class="btn btn-sm btn-link text-danger p-0" 
-                          onclick="showNotification('Asado agregado a favoritos')"
-                          aria-label="Agregar a favoritos">
-                    <i class="bi bi-heart"></i>
-                  </button>
-                </div>
-                <p class="menu-item-description">
-                  Selección de carnes a la parrilla, incluyendo costillas, chorizos y achuras, cocinadas a fuego abierto.
-                </p>
-                <div class="d-flex gap-2 align-items-center">
-                  <span class="h5 mb-0 text-primary me-2">$15.500</span>
-                  <button class="btn btn-outline-primary" onclick="showFoodModal('Asado', 15500, 'Selección de carnes a la parrilla, incluyendo costillas, chorizos y achuras, cocinadas a fuego abierto.', '../assets/img/asado.jpg', 'Platos Principales')">Ver Detalles</button>
-                  <button class="btn btn-primary" onclick="addToCart('Asado', 15500)" aria-label="Agregar al carrito">
-                    <i class="bi bi-cart-plus"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <img src="/assets/img/asado.jpg" 
-                   alt="Asado" 
-                   class="menu-item-image cursor-pointer"
-                   onclick="showFoodModal('Asado', 15500, 'Selección de carnes a la parrilla, incluyendo costillas, chorizos y achuras, cocinadas a fuego abierto.', '../assets/img/asado.jpg', 'Platos Principales')"
-                   style="cursor: pointer;">
-            </div>
-          </div>
-        </article>
-        
-        <!-- Milanesa -->
-        <article class="menu-item">
-          <div class="row align-items-center">
-            <div class="col-md-8 menu-item-content">
-              <div class="menu-item-info">
-                <div class="d-flex justify-content-between align-items-start mb-2">
-                  <h3 class="h5 mb-0">Milanesa Napolitana</h3>
-                  <button class="btn btn-sm btn-link text-danger p-0" 
-                          onclick="showNotification('Milanesa Napolitana agregado a favoritos')"
-                          aria-label="Agregar a favoritos">
-                    <i class="bi bi-heart"></i>
-                  </button>
-                </div>
-                <p class="menu-item-description">
-                  Milanesa de carne empanada cubierta con jamón, salsa de tomate y queso mozzarella derretido.
-                </p>
-                <div class="d-flex gap-2 align-items-center">
-                  <span class="h5 mb-0 text-primary me-2">$13.500</span>
-                  <button class="btn btn-outline-primary" onclick="showFoodModal('Milanesa Napolitana', 13500, 'Milanesa de carne empanada cubierta con jamón, salsa de tomate y queso mozzarella derretido.', '../assets/img/milanesa-napolitana.jpg', 'Platos Principales')">Ver Detalles</button>
-                  <button class="btn btn-primary" onclick="addToCart('Milanesa Napolitana', 13500)" aria-label="Agregar al carrito">
-                    <i class="bi bi-cart-plus"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <img src="/assets/img/milanesa-napolitana.jpg" 
-                   alt="Milanesa Napolitana" 
-                   class="menu-item-image cursor-pointer"
-                   onclick="showFoodModal('Milanesa Napolitana', 13500, 'Milanesa de carne empanada cubierta con jamón, salsa de tomate y queso mozzarella derretido.', '../assets/img/milanesa-napolitana.jpg', 'Platos Principales')"
-                   style="cursor: pointer;">
-            </div>
-          </div>
-        </article>
-        
-        <!-- Pizza -->
-        <article class="menu-item">
-          <div class="row align-items-center">
-            <div class="col-md-8 menu-item-content">
-              <div class="menu-item-info">
-                <div class="d-flex justify-content-between align-items-start mb-2">
-                  <h3 class="h5 mb-0">Pizza Argentina</h3>
-                  <button class="btn btn-sm btn-link text-danger p-0" 
-                          onclick="showNotification('Pizza Argentina agregado a favoritos')"
-                          aria-label="Agregar a favoritos">
-                    <i class="bi bi-heart"></i>
-                  </button>
-                </div>
-                <p class="menu-item-description">
-                  Pizza tradicional argentina con masa gruesa, mozzarella y tu elección de ingredientes.
-                </p>
-                <div class="d-flex gap-2 align-items-center">
-                  <span class="h5 mb-0 text-primary me-2">$14.500</span>
-                  <button class="btn btn-outline-primary" onclick="showFoodModal('Pizza Argentina', 14500, 'Pizza tradicional argentina con masa gruesa, mozzarella y tu elección de ingredientes.', '../assets/img/pizza-argentina.jpg', 'Platos Principales')">Ver Detalles</button>
-                  <button class="btn btn-primary" onclick="addToCart('Pizza Argentina', 14500)" aria-label="Agregar al carrito">
-                    <i class="bi bi-cart-plus"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <img src="/assets/img/pizza-argentina.jpg" 
-                   alt="Pizza Argentina" 
-                   class="menu-item-image cursor-pointer"
-                   onclick="showFoodModal('Pizza Argentina', 14500, 'Pizza tradicional argentina con masa gruesa, mozzarella y tu elección de ingredientes.', '../assets/img/pizza-argentina.jpg', 'Platos Principales')"
-                   style="cursor: pointer;">
-            </div>
-          </div>
-        </article>
-      </section>
+      <div id="menu-sections"></div>
     </div>
   </main>
 
@@ -336,6 +153,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Custom JS -->
   <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/restaurantes.js"></script>
+  <script src="/assets/js/menu.js"></script>
 </body>
 </html>
 
